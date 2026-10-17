@@ -1,29 +1,96 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-autolang="1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CarHunter World</title>
-<style>
-  :root { color-scheme: light dark; }
-  body { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 4rem;
-         font: 16px/1.65 -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-  h1 { font-size: 2rem; margin-bottom: .25rem; }
-  p.lead { font-size: 1.05rem; }
-  ul { padding-left: 1.2rem; line-height: 2; }
-</style>
+<title>CarHunter World: cars under market price</title>
+<meta name="description" content="A Telegram bot that finds cars under market price every day. Set a filter and get the best deals in your chat.">
+<link rel="canonical" href="https://carhunterworld.com/">
+<link rel="alternate" hreflang="en" href="https://carhunterworld.com/">
+<link rel="alternate" hreflang="ru" href="https://carhunterworld.com/ru/">
+<link rel="alternate" hreflang="ka" href="https://carhunterworld.com/ka/">
+<link rel="alternate" hreflang="fa" href="https://carhunterworld.com/fa/">
+<link rel="alternate" hreflang="x-default" href="https://carhunterworld.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://carhunterworld.com/">
+<meta property="og:title" content="CarHunter World: cars under market price">
+<meta property="og:description" content="A Telegram bot that finds cars under market price every day. Set a filter and get the best deals in your chat.">
+<meta property="og:image" content="https://carhunterworld.com/logo.png">
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script src="/lang.js"></script>
 </head>
 <body>
-<h1>CarHunter World</h1>
-<p class="lead">A Telegram bot that finds underpriced cars. It watches public listings, compares
-every price with the market median for the same segment, and sends you the ones that stand out.</p>
 
-<ul>
-  <li><a href="privacy.html">Privacy Policy</a></li>
-  <li><a href="terms.html">Terms of Service</a></li>
-  <li><a href="data-deletion.html">Data deletion</a></li>
-</ul>
+<header class="hero">
+  <svg class="crosshair" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="100" cy="100" r="80"/><circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="4" fill="currentColor"/><line x1="100" y1="0" x2="100" y2="60"/><line x1="100" y1="140" x2="100" y2="200"/><line x1="0" y1="100" x2="60" y2="100"/><line x1="140" y1="100" x2="200" y2="100"/></svg>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="/"><img src="/logo.png" alt="">CarHunter World</a>
+      <div class="langs"><a href="/" data-lang="en" lang="en" aria-current="page"><span class="full">English</span><span class="short">EN</span></a><a href="/ru/" data-lang="ru" lang="ru"><span class="full">Русский</span><span class="short">RU</span></a><a href="/ka/" data-lang="ka" lang="ka"><span class="full">ქართული</span><span class="short">KA</span></a><a href="/fa/" data-lang="fa" lang="fa"><span class="full">فارسی</span><span class="short">FA</span></a></div>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Telegram bot for car buyers</span>
+        <h1>Cars under market price. <span>Every day.</span></h1>
+        <p class="lead">CarHunter checks car listings all day and compares every price with the market. When a car costs much less than similar cars, you get a message first.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="https://t.me/CarHunterGE_bot?start=src_site"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Open the bot in Telegram</a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+        <ul class="chips"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Free trial</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No card needed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Works in Telegram</li></ul>
+        <p class="note">Now working in Georgia.</p>
+      </div>
+      <div class="phone-col">
+        <div class="phone" aria-hidden="true">
+          <div class="phone-top"><img src="/logo.png" alt=""><div><b>CarHunterGE</b><small>bot</small></div></div>
+          <div class="bubble">
+            <div class="hot">🎯 WOW -27%</div>
+            <div class="model">Audi Q5 2016</div>
+            <div>⛽ 2.0L turbo</div>
+            <div>🛣 189 000 km</div>
+            <div>💰 $8 000</div>
+            <div class="market">market ~$11 000</div>
+            <div>📍 Tbilisi</div>
+            <time>09:41</time>
+          </div>
+        </div>
+        <div class="caption">Real example from the bot, 16 October</div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<p>Contact: <a href="mailto:sashakoen01@gmail.com">sashakoen01@gmail.com</a></p>
+<main class="wrap">
+  <section id="how">
+    <div class="section-head"><h2>How it works</h2><p>Three steps. One minute to start.</p></div>
+    <div class="cards"><div class="card"><span class="step-no">01</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div><h3>Set a filter</h3><p>Choose your budget, make and car age. Choose how far below market the price must be.</p></div><div class="card"><span class="step-no">02</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><h3>Get deals first</h3><p>The bot sends you cars that cost less than similar cars. You see them first.</p></div><div class="card"><span class="step-no">03</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3>Check the VIN</h3><p>Send a VIN and see if the car came from a US auction.</p></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Why you can trust the price</h2></div>
+    <div class="trust"><div><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span><h3>Same model, same year</h3><p>We compare each car only with similar cars.</p></span></div><div><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span><span><h3>Real listings</h3><p>Prices come from public car sites and update all day.</p></span></div><div><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span><span><h3>Clear numbers</h3><p>Every deal shows the market price, so you can check it.</p></span></div></div>
+  </section>
+
+  <div class="final">
+    <h2>Ready to find your car?</h2>
+    <p>Set a filter in one minute. The bot does the rest.</p>
+    <a class="btn btn-gold" href="https://t.me/CarHunterGE_bot?start=src_site"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Open the bot in Telegram</a>
+  </div>
+
+  <section>
+    <div class="section-head"><h2>Follow CarHunter World</h2></div>
+    <div class="social"><a href="https://www.instagram.com/carhunterworld/"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</a><a href="https://www.facebook.com/carhunterworld"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</a><a href="https://www.tiktok.com/@carhunterworld"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</a><a href="https://t.me/carhunterworld"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram channel</a></div>
+  </section>
+
+  <footer>
+    Questions? Write to <a href="mailto:hello@carhunterworld.com">hello@carhunterworld.com</a>
+    <ul><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/terms.html">Terms of Service</a></li><li><a href="/data-deletion.html">Data deletion</a></li></ul>
+  </footer>
+</main>
+
 </body>
 </html>
