@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>CarHunter</title>
+<script>
+// Listing link from a CarHunter deal DM: /go/?c=<user code>&l=<source>-<id>[&e=dev].
+// Logs the open (bot repo: function_app/click_track.py, POST /api/click), then opens the
+// listing. The URL is built from these fixed templates, never taken from the link, so the
+// page cannot send anyone elsewhere. Keep them equal to click_track._TEMPLATES.
+(function () {
+  var T = {
+    myauto: "https://www.myauto.ge/en/pr/{id}/",
+    worldauto: "https://worldauto.ge/ru/sell/all/car/{id}"
+  };
+  var API = {
+    prod: "https://func-carcheckerge-prod-35417.azurewebsites.net/api/click",
+    dev: "https://func-carcheckerge-dev-35417.azurewebsites.net/api/click"
+  };
+  var q = new URLSearchParams(location.search);
+  var l = q.get("l") || "";
+  var c = q.get("c") || "";
+  var m = /^(myauto|worldauto)-([A-Za-z0-9-]{1,64})$/.exec(l);
+  var dest = m ? T[m[1]].replace("{id}", m[2]) : null;
+  if (dest && /^[a-z2-9]{8}$/.test(c)) {
+    // text/plain body: a "simple" cross-origin request, no CORS preflight, and the
+    // browser still delivers it while this page is navigating away.
+    var api = API[q.get("e") === "dev" ? "dev" : "prod"];
+    var body = "c=" + encodeURIComponent(c) + "&l=" + encodeURIComponent(l);
+    var sent = false;
+    try { sent = navigator.sendBeacon(api, body); } catch (e) {}
+    if (!sent) {
+      try { fetch(api, { method: "POST", body: body, mode: "no-cors", keepalive: true }); } catch (e) {}
+    }
+  }
+  location.replace(dest || "https://carhunterworld.com/");
+})();
+</script>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; padding: 32px 16px; font: 16px/1.5 system-ui, sans-serif; background: #fff; color: #111; }
+  @media (prefers-color-scheme: dark) { body { background: #0f1720; color: #e8edf2; } a { color: #f5c451; } }
+</style>
+</head>
+<body>
+<noscript><p>Open <a href="https://carhunterworld.com/">carhunterworld.com</a></p></noscript>
+</body>
+</html>
