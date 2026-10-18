@@ -1,0 +1,39 @@
+{
+ "from": "2026-10-11",
+ "to": "2026-10-18",
+ "deals": [
+  {
+   "id": "myauto-123717886",
+   "day": "2026-10-17",
+   "car": "Toyota RAV 4 2023",
+   "city": "Tbilisi",
+   "km": "123 000",
+   "price_usd": 14500,
+   "market_usd": 22500,
+   "off": 36,
+   "img": "/img/deals/myauto-123717886.webp"
+  },
+  {
+   "id": "myauto-123717904",
+   "day": "2026-10-17",
+   "car": "Toyota Sienna 2020",
+   "city": "Tbilisi",
+   "km": "222 000",
+   "price_usd": 16500,
+   "market_usd": 25500,
+   "off": 35,
+   "img": "/img/deals/myauto-123717904.webp"
+  },
+  {
+   "id": "myauto-123704691",
+   "day": "2026-10-16",
+   "car": "Mitsubishi Outlander Sport 2017",
+   "city": "Zugdidi",
+   "km": "22 400",
+   "price_usd": 5300,
+   "market_usd": 7900,
+   "off": 33,
+   "img": "/img/deals/myauto-123704691.webp"
+  }
+ ]
+}
