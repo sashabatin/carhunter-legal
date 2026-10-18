@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CarHunter World: მანქანები ბაზარზე იაფად</title>
 <meta name="description" content="Telegram-ბოტი, რომელიც ყოველდღე პოულობს ბაზარზე იაფ მანქანებს. დააყენე ფილტრი და მიიღე საუკეთესო შეთავაზებები ჩატში.">
+<meta name="theme-color" content="#061633">
 <link rel="canonical" href="https://carhunterworld.com/ka/">
 <link rel="alternate" hreflang="en" href="https://carhunterworld.com/">
 <link rel="alternate" hreflang="ru" href="https://carhunterworld.com/ru/">
@@ -19,78 +20,239 @@
 <link rel="icon" type="image/png" href="/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;600;700;800&family=Inter:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fira+Sans+Extra+Condensed:wght@600;700;800;900&family=Permanent+Marker&family=Noto+Sans+Georgian:wdth,wght@62.5..100,400..900&display=swap">
 <link rel="stylesheet" href="/style.css">
 <script src="/lang.js"></script>
 </head>
 <body>
 
-<header class="hero">
-  <svg class="crosshair" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="100" cy="100" r="80"/><circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="4" fill="currentColor"/><line x1="100" y1="0" x2="100" y2="60"/><line x1="100" y1="140" x2="100" y2="200"/><line x1="0" y1="100" x2="60" y2="100"/><line x1="140" y1="100" x2="200" y2="100"/></svg>
-  <div class="wrap">
-    <nav class="nav">
-      <a class="brand" href="/ka/"><img src="/logo.png" alt="">CarHunter World</a>
-      <div class="langs"><a href="/" data-lang="en" lang="en"><span class="full">English</span><span class="short">EN</span></a><a href="/ru/" data-lang="ru" lang="ru"><span class="full">Русский</span><span class="short">RU</span></a><a href="/ka/" data-lang="ka" lang="ka" aria-current="page"><span class="full">ქართული</span><span class="short">KA</span></a><a href="/fa/" data-lang="fa" lang="fa"><span class="full">فارسی</span><span class="short">FA</span></a></div>
-    </nav>
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Telegram-ბოტი მანქანის მყიდველებისთვის</span>
-        <h1>მანქანები ბაზარზე იაფად. <span>ყოველდღე.</span></h1>
-        <p class="lead">CarHunter მთელი დღე ამოწმებს განცხადებებს და თითოეულ ფასს ბაზარს ადარებს. როცა მანქანა მსგავსებზე ბევრად იაფია, შეტყობინებას პირველი მიიღებ.</p>
-        <div class="actions">
-          <a class="btn btn-gold" href="https://t.me/CarHunterGE_bot?start=src_site"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>გახსენი ბოტი Telegram-ში</a>
-          <a class="btn btn-ghost" href="#how">როგორ მუშაობს</a>
-        </div>
-        <ul class="chips"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>უფასო საცდელი პერიოდი</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>ბარათის გარეშე</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>მუშაობს Telegram-ში</li></ul>
-        <p class="note">ახლა ვმუშაობთ საქართველოში.</p>
-      </div>
-      <div class="phone-col">
-        <div class="phone" aria-hidden="true">
-          <div class="phone-top"><img src="/logo.png" alt=""><div><b>CarHunterGE</b><small>bot</small></div></div>
-          <div class="bubble">
-            <div class="hot">🎯 WOW -27%</div>
-            <div class="model">Audi Q5 2016</div>
-            <div>⛽ 2.0L turbo</div>
-            <div>🛣 189 000 კმ</div>
-            <div>💰 $8 000</div>
-            <div class="market">ბაზარი ~$11 000</div>
-            <div>📍 თბილისი</div>
-            <time>09:41</time>
-          </div>
-        </div>
-        <div class="caption">რეალური მაგალითი ბოტიდან, 16 ოქტომბერი</div>
-      </div>
-    </div>
-  </div>
+<header class="top wrap">
+<a class="brand" href="/ka/"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="14" cy="14" r="9"/><circle cx="14" cy="14" r="3.5"/><path d="M14 1.5v6M14 20.5v6M1.5 14h6M20.5 14h6"/></svg><span class="cond">CarHunter World</span></a>
+<nav class="langs" aria-label="ენა"><a class="lang" href="/" data-lang="en" lang="en" title="English">EN</a><a class="lang" href="/ru/" data-lang="ru" lang="ru" title="Русский">RU</a><a class="lang" href="/ka/" data-lang="ka" lang="ka" title="ქართული" aria-current="page">KA</a><a class="lang" href="/fa/" data-lang="fa" lang="fa" title="فارسی">FA</a></nav>
 </header>
 
-<main class="wrap">
-  <section id="how">
-    <div class="section-head"><h2>როგორ მუშაობს</h2><p>სამი ნაბიჯი. დაწყებას ერთი წუთი სჭირდება.</p></div>
-    <div class="cards"><div class="card"><span class="step-no">01</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div><h3>დააყენე ფილტრი</h3><p>აირჩიე ბიუჯეტი, მარკა და მანქანის ასაკი. მიუთითე, რამდენით დაბალი უნდა იყოს ფასი ბაზარზე.</p></div><div class="card"><span class="step-no">02</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><h3>მიიღე შეთავაზებები პირველმა</h3><p>ბოტი გიგზავნის მანქანებს, რომლებიც მსგავსებზე იაფია. მათ პირველი ნახავ.</p></div><div class="card"><span class="step-no">03</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3>შეამოწმე VIN</h3><p>გამოგზავნე VIN და გაიგე, ხომ არ არის მანქანა ამერიკული აუქციონიდან.</p></div></div>
-  </section>
+<main>
+<section class="hero wrap">
+<div class="hero-top">
+<div>
+<h1 class="cond">მანქანები ბაზარზე იაფად. <span>ყოველდღე.</span></h1>
+<p class="lead">CarHunter მთელი დღე ამოწმებს განცხადებებს. როცა მანქანა მსგავსებზე ბევრად იაფია, Telegram-ში შეტყობინებას პირველი მიიღებ.</p>
+</div>
+</div>
+<div class="hero-actions">
+<a class="go go-big" href="https://t.me/CarHunterGE_bot?start=src_site" data-k="cta">გახსენი ბოტი Telegram-ში<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+<nav class="pills" aria-label="ამ გვერდზე"><a class="pill" href="#how">როგორ მუშაობს</a><a class="pill" href="#plans">ტარიფები და გადახდა</a><a class="pill" href="#contacts">კონტაქტები და ქსელები</a></nav>
+</div>
+</section>
 
-  <section>
-    <div class="section-head"><h2>რატომ არის ფასი სანდო</h2></div>
-    <div class="trust"><div><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span><h3>იგივე მოდელი, იგივე წელი</h3><p>თითოეულ მანქანას მხოლოდ მსგავს მანქანებს ვადარებთ.</p></span></div><div><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span><span><h3>რეალური განცხადებები</h3><p>ფასები ღია ავტო-საიტებიდანაა და მთელი დღე ახლდება.</p></span></div><div><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span><span><h3>გასაგები ციფრები</h3><p>ყველა შეთავაზებაში ჩანს ბაზრის ფასი, ასე რომ, მარტივად შეამოწმებ.</p></span></div></div>
-  </section>
+<section class="wrap top3" aria-labelledby="lot-h">
+<h2 id="lot-h" class="cond">კვირის ტოპ-3 შეთავაზება</h2>
+<p class="sub">ყველაზე დიდი ფასდაკლებები რეალურ შეთავაზებებს შორის, რომლებიც ბოტმა გამოგზავნა, 11–18 ოქტომბერი, 2026. დააჭირე მანქანას, რომ დიდად ნახო.</p>
+<div class="lots"><div class="slide on" data-slide>
+<a class="lotlink" href="https://t.me/CarHunterGE_bot?start=src_site__deal_myauto-123717886" data-k="lot" aria-label="Toyota RAV 4 2023: მიიღე ასეთი შეთავაზებები პირველმა Telegram-ში">
+<article class="bigglass">
+<svg aria-hidden="true" viewBox="0 0 1200 640" preserveAspectRatio="none" class="glass-svg">
+<defs><linearGradient id="gl0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B4C8A"/><stop offset="1" stop-color="#0A2352"/></linearGradient>
+<linearGradient id="rf0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<path d="M96 34 C420 8 780 8 1104 34 Q1150 38 1158 80 L1194 568 Q1198 624 1144 628 C790 640 410 640 56 628 Q2 624 6 568 L42 80 Q50 38 96 34 Z" fill="url(#gl0)" stroke="#030C22" stroke-width="12"/>
+<path d="M640 40 L800 40 L560 624 L400 624 Z" fill="url(#rf0)"/>
+<rect x="556" y="0" width="88" height="28" rx="9" fill="#030C22"/>
+</svg>
+<div class="big-ui">
+<span class="badge"><bdi dir="ltr">−36%</bdi> <small>ბაზარზე იაფი</small></span>
+<figure class="photo"><span class="tape" aria-hidden="true"></span>
+<img src="/img/deals/myauto-123717886.webp" alt="Toyota RAV 4 2023, ფოტო განცხადებიდან" width="720" height="540" loading="lazy">
+<figcaption>17 ოქტ</figcaption></figure>
+<div class="mk scrawl">
+<div class="oneline car" dir="ltr">Toyota RAV 4 2023</div>
+<div class="oneline price" dir="ltr">$14 500</div>
+<div class="oneline was"><span>ბაზარი</span> <bdi dir="ltr">~$22 500</bdi></div>
+</div>
+<p class="mk oneline where">თბილისი, 123 000 კმ</p>
+</div>
+</article>
+<span class="strip"><span class="oneline">მიიღე ასეთი შეთავაზებები პირველმა</span><span class="strip-go">გახსენი ბოტი<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span>
+</a>
+<button class="thumb" type="button" data-pick aria-label="აჩვენე Toyota RAV 4 2023 დიდად">
+<span class="mini">
+<svg aria-hidden="true" viewBox="0 0 1200 640" preserveAspectRatio="none" class="glass-svg"><path d="M96 34 C420 8 780 8 1104 34 Q1150 38 1158 80 L1194 568 Q1198 624 1144 628 C790 640 410 640 56 628 Q2 624 6 568 L42 80 Q50 38 96 34 Z" fill="#123A70" stroke="#030C22" stroke-width="22"/></svg>
+<span class="mk mini-ui"><span class="oneline mini-price" dir="ltr">$14 500</span><span class="oneline mini-was" dir="ltr">~$22 500</span></span>
+<span class="mini-badge" dir="ltr">−36%</span>
+</span>
+<span class="oneline mini-car" dir="ltr">Toyota RAV 4 2023</span>
+<span class="mini-where">თბილისი, 123 000 კმ</span>
+</button>
+</div><div class="slide off" data-slide>
+<a class="lotlink" href="https://t.me/CarHunterGE_bot?start=src_site__deal_myauto-123717904" data-k="lot" aria-label="Toyota Sienna 2020: მიიღე ასეთი შეთავაზებები პირველმა Telegram-ში">
+<article class="bigglass">
+<svg aria-hidden="true" viewBox="0 0 1200 640" preserveAspectRatio="none" class="glass-svg">
+<defs><linearGradient id="gl1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B4C8A"/><stop offset="1" stop-color="#0A2352"/></linearGradient>
+<linearGradient id="rf1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<path d="M96 34 C420 8 780 8 1104 34 Q1150 38 1158 80 L1194 568 Q1198 624 1144 628 C790 640 410 640 56 628 Q2 624 6 568 L42 80 Q50 38 96 34 Z" fill="url(#gl1)" stroke="#030C22" stroke-width="12"/>
+<path d="M640 40 L800 40 L560 624 L400 624 Z" fill="url(#rf1)"/>
+<rect x="556" y="0" width="88" height="28" rx="9" fill="#030C22"/>
+</svg>
+<div class="big-ui">
+<span class="badge"><bdi dir="ltr">−35%</bdi> <small>ბაზარზე იაფი</small></span>
+<figure class="photo"><span class="tape" aria-hidden="true"></span>
+<img src="/img/deals/myauto-123717904.webp" alt="Toyota Sienna 2020, ფოტო განცხადებიდან" width="720" height="540" loading="lazy">
+<figcaption>17 ოქტ</figcaption></figure>
+<div class="mk scrawl">
+<div class="oneline car" dir="ltr">Toyota Sienna 2020</div>
+<div class="oneline price" dir="ltr">$16 500</div>
+<div class="oneline was"><span>ბაზარი</span> <bdi dir="ltr">~$25 500</bdi></div>
+</div>
+<p class="mk oneline where">თბილისი, 222 000 კმ</p>
+</div>
+</article>
+<span class="strip"><span class="oneline">მიიღე ასეთი შეთავაზებები პირველმა</span><span class="strip-go">გახსენი ბოტი<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span>
+</a>
+<button class="thumb" type="button" data-pick aria-label="აჩვენე Toyota Sienna 2020 დიდად">
+<span class="mini">
+<svg aria-hidden="true" viewBox="0 0 1200 640" preserveAspectRatio="none" class="glass-svg"><path d="M96 34 C420 8 780 8 1104 34 Q1150 38 1158 80 L1194 568 Q1198 624 1144 628 C790 640 410 640 56 628 Q2 624 6 568 L42 80 Q50 38 96 34 Z" fill="#123A70" stroke="#030C22" stroke-width="22"/></svg>
+<span class="mk mini-ui"><span class="oneline mini-price" dir="ltr">$16 500</span><span class="oneline mini-was" dir="ltr">~$25 500</span></span>
+<span class="mini-badge" dir="ltr">−35%</span>
+</span>
+<span class="oneline mini-car" dir="ltr">Toyota Sienna 2020</span>
+<span class="mini-where">თბილისი, 222 000 კმ</span>
+</button>
+</div><div class="slide off" data-slide>
+<a class="lotlink" href="https://t.me/CarHunterGE_bot?start=src_site__deal_myauto-123704691" data-k="lot" aria-label="Mitsubishi Outlander Sport 2017: მიიღე ასეთი შეთავაზებები პირველმა Telegram-ში">
+<article class="bigglass">
+<svg aria-hidden="true" viewBox="0 0 1200 640" preserveAspectRatio="none" class="glass-svg">
+<defs><linearGradient id="gl2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B4C8A"/><stop offset="1" stop-color="#0A2352"/></linearGradient>
+<linearGradient id="rf2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<path d="M96 34 C420 8 780 8 1104 34 Q1150 38 1158 80 L1194 568 Q1198 624 1144 628 C790 640 410 640 56 628 Q2 624 6 568 L42 80 Q50 38 96 34 Z" fill="url(#gl2)" stroke="#030C22" stroke-width="12"/>
+<path d="M640 40 L800 40 L560 624 L400 624 Z" fill="url(#rf2)"/>
+<rect x="556" y="0" width="88" height="28" rx="9" fill="#030C22"/>
+</svg>
+<div class="big-ui">
+<span class="badge"><bdi dir="ltr">−33%</bdi> <small>ბაზარზე იაფი</small></span>
+<figure class="photo"><span class="tape" aria-hidden="true"></span>
+<img src="/img/deals/myauto-123704691.webp" alt="Mitsubishi Outlander Sport 2017, ფოტო განცხადებიდან" width="720" height="540" loading="lazy">
+<figcaption>16 ოქტ</figcaption></figure>
+<div class="mk scrawl">
+<div class="oneline car" dir="ltr">Mitsubishi Outlander Sport 2017</div>
+<div class="oneline price" dir="ltr">$5 300</div>
+<div class="oneline was"><span>ბაზარი</span> <bdi dir="ltr">~$7 900</bdi></div>
+</div>
+<p class="mk oneline where">ზუგდიდი, 22 400 კმ</p>
+</div>
+</article>
+<span class="strip"><span class="oneline">მიიღე ასეთი შეთავაზებები პირველმა</span><span class="strip-go">გახსენი ბოტი<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span>
+</a>
+<button class="thumb" type="button" data-pick aria-label="აჩვენე Mitsubishi Outlander Sport 2017 დიდად">
+<span class="mini">
+<svg aria-hidden="true" viewBox="0 0 1200 640" preserveAspectRatio="none" class="glass-svg"><path d="M96 34 C420 8 780 8 1104 34 Q1150 38 1158 80 L1194 568 Q1198 624 1144 628 C790 640 410 640 56 628 Q2 624 6 568 L42 80 Q50 38 96 34 Z" fill="#123A70" stroke="#030C22" stroke-width="22"/></svg>
+<span class="mk mini-ui"><span class="oneline mini-price" dir="ltr">$5 300</span><span class="oneline mini-was" dir="ltr">~$7 900</span></span>
+<span class="mini-badge" dir="ltr">−33%</span>
+</span>
+<span class="oneline mini-car" dir="ltr">Mitsubishi Outlander Sport 2017</span>
+<span class="mini-where">ზუგდიდი, 22 400 კმ</span>
+</button>
+</div></div>
+</section>
 
-  <div class="final">
-    <h2>მზად ხარ, იპოვო შენი მანქანა?</h2>
-    <p>ფილტრი ერთ წუთში ყენდება. დანარჩენს ბოტი გააკეთებს.</p>
-    <a class="btn btn-gold" href="https://t.me/CarHunterGE_bot?start=src_site"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>გახსენი ბოტი Telegram-ში</a>
-  </div>
+<section id="how" class="wrap how" aria-labelledby="how-h">
+<h2 id="how-h" class="cond">როგორ მუშაობს</h2>
+<div class="lane"><div class="lane-line" aria-hidden="true"></div><div class="lane-step"><h3 class="cond">დააყენე ფილტრი</h3><p>ორი კითხვა: რამდენით იაფი უნდა იყოს ბაზარზე და რა ბიუჯეტი გაქვს. მარკა, ასაკი და გარბენი სურვილისამებრ.</p></div><div class="lane-step r"><h3 class="cond">მიიღე შეთავაზებები პირველმა</h3><p>იაფი მანქანები Telegram-ში მოგდის. თითოეულთან ჩანს ბაზრის ფასი, ასე რომ, მარტივად შეამოწმებ.</p></div><div class="lane-step"><h3 class="cond">შეამოწმე VIN</h3><p>გამოგზავნე VIN ან VIN-ფირფიტის ფოტო. ნახავ აშშ-ის აუქციონების ისტორიას: salvage სტატუსს და ავარიებს.</p></div></div>
+</section>
 
-  <section>
-    <div class="section-head"><h2>გამოიწერე CarHunter World</h2></div>
-    <div class="social"><a href="https://www.instagram.com/carhunterworld/"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</a><a href="https://www.facebook.com/carhunterworld"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</a><a href="https://www.tiktok.com/@carhunterworld"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</a><a href="https://t.me/carhunterworld"><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram-არხი</a></div>
-  </section>
+<section id="plans" class="plans-band" aria-labelledby="plans-h">
+<div class="wrap">
+<h2 id="plans-h" class="cond">ტარიფები და გადახდა</h2>
+<p class="plans-note">ფასიანი ტარიფები მოქმედებს, სანამ არ გააუქმებ. VIN-შემოწმებები ყოველ პერიოდში ახლდება: Fast-ზე კვირაში 10, VIP-სა და PRO-ზე თვეში 40 ან 120.</p>
+<div class="plans"><article class="plan">
+<h3 class="cond">Fast</h3>
+<p class="plan-tag">მანქანა სასწრაფოდ გჭირდება</p>
+<p class="plan-line">სრული წვდომის კვირა, სანამ ახლავე ეძებ.</p>
+<p class="plan-price"><span class="cond" dir="ltr">€6</span> <span class="per">/ 7 დღე</span></p>
+<p class="plan-alt" dir="auto">≈ €26 / თვე*</p>
+<ul><li>შეთავაზებები პირად შეტყობინებებში</li><li>VIP-არხი</li><li>10 VIN-შემოწმება</li><li>10 ფილტრი, 10 მანქანა გარაჟში</li></ul>
+<a class="go plan-go" href="https://t.me/tribute/app?startapp=s12F9" data-k="plan" data-p="fast">აირჩიე Fast<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+</article><article class="plan plan-hi">
+<span class="plan-badge">გირჩევთ</span><h3 class="cond">VIP</h3>
+<p class="plan-tag">აჩქარებისა და ზედმეტი ხარჯის გარეშე</p>
+<p class="plan-line">მშვიდად ეძებ, შეთავაზებები ყოველდღე თავად მოდის.</p>
+<p class="plan-price"><span class="cond" dir="ltr">€19</span> <span class="per">/ თვე</span></p>
+<p class="plan-alt" dir="auto">ან €190 / წელი</p>
+<ul><li>ყველაფერი Fast-დან</li><li>40 VIN-შემოწმება</li><li>15 ფილტრი, 15 მანქანა გარაჟში</li><li>პრიორიტეტული შეტყობინებები</li></ul>
+<a class="go plan-go" href="https://t.me/tribute/app?startapp=s108W" data-k="plan" data-p="vip">აირჩიე VIP<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+</article><article class="plan">
+<h3 class="cond">PRO</h3>
+<p class="plan-tag">გადამყიდველებისა და დილერებისთვის</p>
+<p class="plan-line">ყიდულობ გასაყიდად: ყველაზე მეტი შემოწმება, შეტყობინებები ყველაზე ადრე.</p>
+<p class="plan-price"><span class="cond" dir="ltr">€49</span> <span class="per">/ თვე</span></p>
+<p class="plan-alt" dir="auto">ან €490 / წელი</p>
+<ul><li>ყველაფერი VIP-დან</li><li>120 VIN-შემოწმება</li><li>ულიმიტო ფილტრი და გარაჟი</li><li>შეტყობინებები პირველ რიგში</li></ul>
+<a class="go plan-go" href="https://t.me/tribute/app?startapp=s12DN" data-k="plan" data-p="pro">აირჩიე PRO<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+</article></div>
+<p class="fee">* Fast ყოველ კვირას გრძელდება: €6 × 4,3 კვირა ≈ €26 თვეში. VIP-ის ან PRO-ს წელი 10 თვის ფასი ღირს: 2 თვე საჩუქრად.<br>ფასები მოცემულია Tribute-ის მომსახურების საკომისიოს გარეშე. Tribute მას გადახდისას ამატებს და დადასტურებამდე დაინახავ.</p>
+<div class="guide">
+<h3 class="cond">როგორ გადავიხადო და დავიწყო</h3>
+<ol><li>დააჭირე ტარიფს. Tribute-ში შეამოწმე პერიოდი: VIP-სა და PRO-ს აქვს თვე და წელი.</li><li>გადახდის შემდეგ Tribute VIP-არხზე წვდომას მოგცემს.</li><li>გახსენი ბოტი, დააჭირე START-ს და დააყენე ფილტრი. მაშინ პირადი შეთავაზებები პირად შეტყობინებებში მოვა.</li></ol>
+<a class="go guide-go" href="https://t.me/CarHunterGE_bot?start=src_site" data-k="guide">გახსენი ბოტი<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+</div>
+<div class="trial">
+<div class="trial-head">
+<span class="trial-tag">ჯერ არ ხარ მზად გადასახდელად?</span>
+<span class="cond trial-days">21 დღე</span>
+<p>უფასოდ და ბარათის გარეშე. როცა დასრულდება, უბრალოდ გაჩერდება: არაფერი ჩამოგეჭრება.</p>
+</div>
+<ul class="trial-list"><li class=""><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>შეთავაზებები პირად შეტყობინებებში</li><li class=""><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>VIP-არხი</li><li class="trial-vin"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>სულ 10 VIN-შემოწმება</li></ul>
+<a class="go trial-go" href="https://t.me/CarHunterGE_bot?start=src_site" data-k="trial">დაიწყე უფასოდ<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+</div>
+<h3 class="cond pay-h">როგორ ხდება გადახდა</h3>
+<div class="pay"><div><strong>ბოტი შენს ბარათს ვერ ხედავს.</strong><p>გადახდის ღილაკი Tribute-ის გვერდს ხსნის. ბარათს იქ შეიყვან და ჩვენამდე არ აღწევს.</p></div><div><strong>გადახდაზე არაფერს ვინახავთ.</strong><p>ვინახავთ შენს Telegram id-ს, ტარიფს, მის ვადას და ფილტრებს. ბარათის ნომერი ჩვენთან არ არის.</p></div><div><strong>ვინ იღებს ფულს.</strong><p>TRBT Limited (კვიპროსი, HE 443898), კომპანია, რომელიც Tribute-ს უდგას უკან. ეს სახელი ჩანს ბანკის ამონაწერში.</p></div><div><strong>ბარათი არ გაქვს? არა უშავს.</strong><p>ბარათის გარდა, Tribute-ს სხვა გადახდის გზებიც აქვს. ნაკრები მოწყობილობასა და ქვეყანაზეა დამოკიდებული, სრულ სიას გადახდამდე ნახავ.</p></div><div><strong>არის მომსახურების საკომისიო.</strong><p>Tribute ტარიფის ფასს თავის საკომისიოს ამატებს. სრულ თანხას გადახდისას, დადასტურებამდე ხედავ.</p></div><div><strong>გაუქმება ერთ ადგილას.</strong><p>ტარიფს Tribute-ში მართავ და იქვე აუქმებ.</p></div></div>
+</div>
+</section>
 
-  <footer>
-    კითხვები გაქვს? მოგვწერე: <a href="mailto:hello@carhunterworld.com">hello@carhunterworld.com</a>
-    <ul><li><a href="/privacy.html">კონფიდენციალურობის პოლიტიკა (EN)</a></li><li><a href="/terms.html">გამოყენების პირობები (EN)</a></li><li><a href="/data-deletion.html">მონაცემების წაშლა (EN)</a></li></ul>
-  </footer>
+<section id="contacts" class="wrap contacts" aria-labelledby="contacts-h">
+<h2 id="contacts-h" class="cond">კონტაქტები და ქსელები</h2>
+<p class="ask">კითხვები გაქვს? მოგვწერე: <a href="mailto:hello@carhunterworld.com">hello@carhunterworld.com</a></p>
+<div class="social"><a class="pill soc" href="https://www.instagram.com/carhunterworld/"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>Instagram</a><a class="pill soc" href="https://www.facebook.com/carhunterworld"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a><a class="pill soc" href="https://www.tiktok.com/@carhunterworld"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.5 5 4.8"/></svg>TikTok</a><a class="pill soc" href="https://t.me/carhunterworld"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 10.5 13.5"/><path d="M21 3 14.5 21l-4-7.5L3 9.5 21 3Z"/></svg>Telegram-არხი</a></div>
+<footer><a href="/privacy.html">კონფიდენციალურობის პოლიტიკა (EN)</a><a href="/terms.html">გამოყენების პირობები (EN)</a><a href="/data-deletion.html">მონაცემების წაშლა (EN)</a></footer>
+</section>
 </main>
 
+<script>
+// Expanding panels: a tap on a small windshield makes it the big one. Without JS the first
+// deal stays big and the page still works.
+document.querySelectorAll('[data-pick]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var slide = b.closest('[data-slide]');
+    document.querySelectorAll('[data-slide]').forEach(function (s) {
+      s.classList.toggle('on', s === slide); s.classList.toggle('off', s !== slide);
+    });
+    var link = slide.querySelector('.lotlink'); if (link) link.focus({preventScroll: true});
+  });
+});
+// Source tag: an ad links here as ?src=gads, and every bot link then carries src_gads instead
+// of src_site (kept for the visit, so a language switch keeps it). The bot reads at most 64
+// characters of a start payload: a deal tail that would not fit is dropped, the tag is not.
+// Then every button beacons its click, plan buttons too: they leave for Tribute, which knows
+// no source. sendBeacon outlives the page; nothing waits for it.
+(function () {
+  var q = new URLSearchParams(location.search);
+  var s = (q.get('src') || '').toLowerCase();
+  if (!/^[a-z0-9_]{1,24}$/.test(s)) s = '';
+  try { if (s) sessionStorage.setItem('chsrc', s); else s = sessionStorage.getItem('chsrc') || ''; } catch (e) {}
+  if (s) document.querySelectorAll('a[href*="?start=src_site"]').forEach(function (a) {
+    var h = a.href.replace('?start=src_site', '?start=src_' + s);
+    if (h.split('?start=')[1].length > 64) h = h.split('__deal_')[0];
+    a.href = h;
+  });
+  var api = q.get('e') === 'dev' ? 'https://func-carcheckerge-dev-35417.azurewebsites.net/api/site-click' : 'https://func-carcheckerge-prod-35417.azurewebsites.net/api/site-click';
+  document.querySelectorAll('[data-k]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var b = new URLSearchParams({k: a.dataset.k, s: s || 'site', l: document.documentElement.lang});
+      if (a.dataset.p) b.set('p', a.dataset.p);
+      var sent = false;
+      try { sent = navigator.sendBeacon(api, b); } catch (e) {}
+      if (!sent) try { fetch(api, {method: 'POST', body: b, mode: 'no-cors', keepalive: true}); } catch (e) {}
+    });
+  });
+})();
+</script>
 </body>
 </html>

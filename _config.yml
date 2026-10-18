@@ -1,0 +1,6 @@
+# GitHub Pages (Jekyll) turns any .md file into a public page. These are working notes for
+# design agents, not site pages. Folders that start with "_" or "." are skipped already.
+exclude:
+  - PRODUCT.md
+  - DESIGN.md
+  - README.md
