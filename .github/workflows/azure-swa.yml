@@ -5,8 +5,8 @@ name: azure-swa
 # site sells the paid bot. Pages and SWA both serve main; DNS decides which one people see.
 #
 # The site is plain prebuilt HTML (python _src/build.py, run by hand or by site-top3 in the bot
-# repo), so there is no build here. We copy only the files Jekyll used to publish: no _src/,
-# no dot files, no *.md, no CNAME/_config.yml. Pushes from site-top3 come over a deploy key,
+# repo), so there is no build here. We copy the files Jekyll publishes (no _src/, no dot files,
+# no *.md, no CNAME/_config.yml); staticwebapp.config.json rides along, SWA reads it as config. Pushes from site-top3 come over a deploy key,
 # and those do start this workflow (only GITHUB_TOKEN pushes don't).
 #
 # Secret AZURE_STATIC_WEB_APPS_API_TOKEN = deployment token of the SWA resource. Without it the
@@ -43,6 +43,14 @@ jobs:
             test -f "dist/$f" || { echo "::error::missing $f"; exit 1; }
           done
           test ! -e dist/_src || { echo "::error::_src must not be public"; exit 1; }
+          # Every local src/href in the pages must exist too (a Top 3 photo dropped by site-top3,
+          # a renamed css). "/x/" means "/x/index.html"; query and #fragment are cut off.
+          bad=0
+          for ref in $(grep -rhoE '(src|href)="/[^"]*"' --include='*.html' dist | sed -E 's/^[a-z]+="//; s/"$//; s/[?#].*//' | sort -u); do
+            case "$ref" in */) ref="${ref}index.html";; esac
+            test -f "dist$ref" || { echo "::error::page links to missing $ref"; bad=1; }
+          done
+          test "$bad" = 0
           find dist -type f | sort
 
       - name: Deploy
