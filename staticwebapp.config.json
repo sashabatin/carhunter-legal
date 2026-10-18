@@ -1,0 +1,7 @@
+{
+  "trailingSlash": "auto",
+  "globalHeaders": {
+    "Cache-Control": "public, max-age=600",
+    "X-Content-Type-Options": "nosniff"
+  }
+}
