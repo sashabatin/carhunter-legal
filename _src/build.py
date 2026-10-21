@@ -29,11 +29,13 @@ TRIBUTE = {"fast": "https://t.me/tribute/app?startapp=s12F9",
 # The bot's numbers, in ONE place: change them here when the bot env changes.
 TRIAL_DAYS = 21          # bot env TRIAL_DAYS
 TRIAL_VIN = 10           # bot env VIN_QUOTA_TRIAL
-# (id, shown name, EUR, period, VIN checks per period, filters, garage, EUR a year);
-# None = unlimited, or no yearly period. Yearly = 10 months, as on the Tribute screens 18.10.
+# (id, shown name, EUR, period, VIN checks per period, filters, garage, struck-out old EUR);
+# None = unlimited, or no old price. Yearly periods were removed in Tribute 21.10 (Tribute
+# preselected the year). VIP promo 21.10: EUR 14 instead of 19 and 30 checks, open until
+# Dec 31 (the "promo" strings); Tribute support confirmed subscribers keep their price.
 PLANS = [("fast", "Fast", 6, "week", 10, 10, 10, None),
-         ("vip", "VIP", 19, "month", 40, 15, 15, 190),
-         ("pro", "PRO", 49, "month", 120, None, None, 490)]
+         ("vip", "VIP", 14, "month", 30, 15, 15, 19),
+         ("pro", "PRO", 49, "month", 120, None, None, None)]
 # Fast renews weekly: 6 x 30/7 = 25.7. Shown so VIP reads as the cheaper way to stay (owner).
 FAST_MONTH_EUR = 26
 
@@ -169,13 +171,13 @@ T = {
         "get": lambda p: f"Get {p}",
         "recommended": "Recommended",
         "per_month": lambda m: f"≈ €{m} / month*",
-        "year": lambda y: f"or €{y} / year",
-        "footnote": lambda m: f"* Fast renews every week: €6 × 4.3 weeks ≈ €{m} a month. A year of VIP or PRO costs 10 months: 2 months free.",
+        "promo": lambda p: f"Promo until Dec 31. Your €{p} stays while you are subscribed.",
+        "footnote": lambda m: f"* Fast renews every week: €6 × 4.3 weeks ≈ €{m} a month.",
         "tag": {"fast": ("Need a car urgently", "A week of full access while you buy right now."),
                 "vip": ("No rush, no overpaying", "Search calmly: deals come to you every day."),
                 "pro": ("For resellers and dealers", "You buy to resell: the most checks, alerts before everyone.")},
         "guide_h": "How to pay and start",
-        "guide": ["Tap a plan. In Tribute, check the period: VIP and PRO have a month and a year.",
+        "guide": ["Tap a plan and pay in Tribute.",
                   "After payment, Tribute gives you access to the VIP channel.",
                   "Open the bot, tap START and set a filter. Then personal deals come to your messages."],
         "guide_go": "Open the bot",
@@ -231,13 +233,13 @@ T = {
         "get": lambda p: f"Оформить {p}",
         "recommended": "Рекомендуем",
         "per_month": lambda m: f"≈ €{m} / мес*",
-        "year": lambda y: f"или €{y} / год",
-        "footnote": lambda m: f"* Fast продлевается каждую неделю: €6 × 4,3 недели ≈ €{m} в месяц. Год VIP или PRO стоит как 10 месяцев: 2 месяца в подарок.",
+        "promo": lambda p: f"Акция до 31 декабря. Цена €{p} остаётся, пока подписка активна.",
+        "footnote": lambda m: f"* Fast продлевается каждую неделю: €6 × 4,3 недели ≈ €{m} в месяц.",
         "tag": {"fast": ("Срочно нужна машина", "Неделя полного доступа, пока ищешь прямо сейчас."),
                 "vip": ("Без спешки и без переплаты", "Ищешь спокойно, сделки сами приходят каждый день."),
                 "pro": ("Для перекупов и дилеров", "Покупаешь на перепродажу: больше всего проверок, алерты раньше всех.")},
         "guide_h": "Как оплатить и начать",
-        "guide": ["Нажми на тариф. В Tribute проверь период: у VIP и PRO есть месяц и год.",
+        "guide": ["Нажми на тариф и оплати в Tribute.",
                   "После оплаты Tribute даст доступ в VIP-канал.",
                   "Открой бота, нажми START и поставь фильтр. Тогда личные сделки пойдут в личку."],
         "guide_go": "Открыть бота",
@@ -294,13 +296,13 @@ T = {
         "get": lambda p: f"აირჩიე {p}",
         "recommended": "გირჩევთ",
         "per_month": lambda m: f"≈ €{m} / თვე*",
-        "year": lambda y: f"ან €{y} / წელი",
-        "footnote": lambda m: f"* Fast ყოველ კვირას გრძელდება: €6 × 4,3 კვირა ≈ €{m} თვეში. VIP-ის ან PRO-ს წელი 10 თვის ფასი ღირს: 2 თვე საჩუქრად.",
+        "promo": lambda p: f"აქცია 31 დეკემბრამდე. ფასი €{p} შენარჩუნდება, სანამ გამოწერა აქტიურია.",
+        "footnote": lambda m: f"* Fast ყოველ კვირას გრძელდება: €6 × 4,3 კვირა ≈ €{m} თვეში.",
         "tag": {"fast": ("მანქანა სასწრაფოდ გჭირდება", "სრული წვდომის კვირა, სანამ ახლავე ეძებ."),
                 "vip": ("აჩქარებისა და ზედმეტი ხარჯის გარეშე", "მშვიდად ეძებ, შეთავაზებები ყოველდღე თავად მოდის."),
                 "pro": ("გადამყიდველებისა და დილერებისთვის", "ყიდულობ გასაყიდად: ყველაზე მეტი შემოწმება, შეტყობინებები ყველაზე ადრე.")},
         "guide_h": "როგორ გადავიხადო და დავიწყო",
-        "guide": ["დააჭირე ტარიფს. Tribute-ში შეამოწმე პერიოდი: VIP-სა და PRO-ს აქვს თვე და წელი.",
+        "guide": ["დააჭირე ტარიფს და გადაიხადე Tribute-ში.",
                   "გადახდის შემდეგ Tribute VIP-არხზე წვდომას მოგცემს.",
                   "გახსენი ბოტი, დააჭირე START-ს და დააყენე ფილტრი. მაშინ პირადი შეთავაზებები პირად შეტყობინებებში მოვა."],
         "guide_go": "გახსენი ბოტი",
@@ -357,13 +359,13 @@ T = {
         "get": lambda p: f"گرفتن {p}",
         "recommended": "پیشنهاد ما",
         "per_month": lambda m: f"≈ ⁦€{m}⁩ / ماه*",  # LRI/PDI: keep "€26" in LTR order
-        "year": lambda y: f"یا ⁦€{y}⁩ / سال",
-        "footnote": lambda m: f"* Fast هر هفته تمدید می‌شود: ⁦€6⁩ × ۴٫۳ هفته ≈ ⁦€{m}⁩ در ماه. یک سال VIP یا PRO به قیمت ۱۰ ماه است: ۲ ماه هدیه.",
+        "promo": lambda p: f"تخفیف تا ۳۱ دسامبر. قیمت ⁦€{p}⁩ تا وقتی اشتراکت فعال است ثابت می‌ماند.",
+        "footnote": lambda m: f"* Fast هر هفته تمدید می‌شود: ⁦€6⁩ × ۴٫۳ هفته ≈ ⁦€{m}⁩ در ماه.",
         "tag": {"fast": ("فوری خودرو لازم داری", "یک هفته دسترسی کامل، وقتی همین حالا دنبال خرید هستی."),
                 "vip": ("بدون عجله و بدون هزینهٔ اضافه", "با خیال راحت بگرد، پیشنهادها هر روز خودشان می‌رسند."),
                 "pro": ("برای خرید و فروش حرفه‌ای", "برای فروش دوباره می‌خری: بیشترین بررسی‌ها، هشدار زودتر از همه.")},
         "guide_h": "چطور پرداخت کنم و شروع کنم",
-        "guide": ["روی یک پلن بزن. در Tribute دوره را بررسی کن: VIP و PRO ماهانه و سالانه دارند.",
+        "guide": ["روی یک پلن بزن و در Tribute پرداخت کن.",
                   "بعد از پرداخت، Tribute به تو دسترسی کانال VIP را می‌دهد.",
                   "ربات را باز کن، START را بزن و یک فیلتر بگذار. آن‌وقت پیشنهادهای شخصی به پیام‌هایت می‌آید."],
         "guide_go": "باز کردن ربات",
@@ -467,19 +469,20 @@ def lot(lang: str, i: int, d: dict) -> str:
 def plans(lang: str) -> str:
     t, e = T[lang], escape
     out = []
-    for pid, name, eur, period, vin, filters, garage, year in PLANS:
+    for pid, name, eur, period, vin, filters, garage, old in PLANS:
         feats = "".join(f"<li>{e(x)}</li>" for x in t["feat"][pid](num(lang, vin), num(lang, filters),
                                                                     num(lang, garage)))
         cls = "plan plan-hi" if pid == "vip" else "plan"
         badge = f'<span class="plan-badge">{e(t["recommended"])}</span>' if pid == "vip" else ""
         alt = (t["per_month"](FAST_MONTH_EUR) if pid == "fast"
-               else t["year"](year) if year else "")
+               else t["promo"](eur) if old else "")
+        was = f'<s class="was">€{old}</s> ' if old else ""
         tag, line = t["tag"][pid]
         out.append(f"""<article class="{cls}">
 {badge}<h3 class="cond">{name}</h3>
 <p class="plan-tag">{e(tag)}</p>
 <p class="plan-line">{e(line)}</p>
-<p class="plan-price"><span class="cond" dir="ltr">€{eur}</span> <span class="per">{e(t['period'][period])}</span></p>
+<p class="plan-price">{was}<span class="cond" dir="ltr">€{eur}</span> <span class="per">{e(t['period'][period])}</span></p>
 <p class="plan-alt" dir="auto">{e(alt)}</p>
 <ul>{feats}</ul>
 <a class="go plan-go" href="{TRIBUTE[pid]}" data-k="plan" data-p="{pid}">{e(t['get'](name))}{ARROW}</a>
