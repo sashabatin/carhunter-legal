@@ -20,24 +20,23 @@ BOT = "https://t.me/CarHunterGE_bot"
 # One tag for the whole site, so `prod_stats.py sources` shows it as one placement.
 SRC = "site"
 # Plan buttons go straight to the Tribute checkout (owner, 18.10: every step before paying loses
-# buyers). Same links as prod env TRIBUTE_LINK_FAST / TRIBUTE_LINK / TRIBUTE_LINK_PRO, checked
-# 18.10; when one changes there, change it here. Only the t.me/tribute/app form, never a web link.
-TRIBUTE = {"fast": "https://t.me/tribute/app?startapp=s12F9",
+# buyers). Same links as prod env TRIBUTE_LINK_FAST / TRIBUTE_LINK / TRIBUTE_LINK_PRO; when one
+# changes there, change it here. The 7-day pass is a digital product, its link is the web form:
+# web checkout is proven for products (live purchase 03.09), and the bot's webhook routes it.
+TRIBUTE = {"fast": "https://web.tribute.tg/p/IGD",
            "vip": "https://t.me/tribute/app?startapp=s108W",
            "pro": "https://t.me/tribute/app?startapp=s12DN"}
 
 # The bot's numbers, in ONE place: change them here when the bot env changes.
-TRIAL_DAYS = 21          # bot env TRIAL_DAYS
-TRIAL_VIN = 10           # bot env VIN_QUOTA_TRIAL
-# (id, shown name, EUR, period, VIN checks per period, filters, garage, struck-out old EUR);
-# None = unlimited, or no old price. Yearly periods were removed in Tribute 21.10 (Tribute
-# preselected the year). VIP promo 21.10: EUR 14 instead of 19 and 30 checks, open until
-# Dec 31 (the "promo" strings); Tribute support confirmed subscribers keep their price.
-PLANS = [("fast", "Fast", 6, "week", 10, 10, 10, None),
-         ("vip", "VIP", 14, "month", 30, 15, 15, 19),
-         ("pro", "PRO", 49, "month", 120, None, None, None)]
-# Fast renews weekly: 6 x 30/7 = 25.7. Shown so VIP reads as the cheaper way to stay (owner).
-FAST_MONTH_EUR = 26
+TRIAL_DAYS = 7           # bot env TRIAL_DAYS
+TRIAL_VIN = 2            # bot env VIN_QUOTA_TRIAL
+TRIAL_CARS = 5           # bot env DEMO_DM_PER_DAY
+# (id, shown name, EUR, period, VIN checks per period, filters, garage); None = unlimited. The
+# ladder of 29.10: a one-off 7-day pass, VIP as the plain price (no promo since 30.10), PRO as the
+# anchor. The pass's shown name is per language (T "pass_name"). Bot: users._VIN_QUOTA_DEFAULTS.
+PLANS = [("fast", None, 5, "week", 7, 10, 10),
+         ("vip", "VIP", 14, "month", 30, 15, 15),
+         ("pro", "PRO", 49, "month", 100, None, None)]
 
 
 # A lot opens the bot on that car (?start=src_site__deal_<id>). Only after the bot that cuts
@@ -158,27 +157,26 @@ T = {
         ],
         "plans_h": "Plans and payment",
         "trial_h": "Not ready to pay?",
-        "trial_sub": "Free and no card. When it ends, it just stops: nothing is charged.",
-        "trial_items": lambda v: ["Deals in your messages", "VIP channel", f"{v} VIN checks in total"],
+        "trial_sub": "Free and no card. The clock starts with your first car. When it ends, it just stops: nothing is charged.",
+        "trial_items": lambda v: [f"{TRIAL_CARS} deals a day in your messages", "VIP channel", f"{v} VIN checks in total"],
         "trial_go": "Start free",
-        "plans_note": lambda w, m1, m2: f"Paid plans run until you cancel. VIN checks renew every period: {w} a week on Fast, {m1} or {m2} a month on VIP and PRO.",
+        "plans_note": lambda w, m1, m2: f"VIP and PRO run until you cancel. The pass ends by itself after 7 days, with no auto-renewal. VIN checks: {w} on the pass, {m1} or {m2} a month on VIP and PRO.",
         "period": {"week": "/ 7 days", "month": "/ month"},
         "feat": {
             "fast": lambda n, f, g: ["Deals in your messages", "VIP channel", f"{n} VIN checks", f"{f} filters, {g} cars in garage"],
-            "vip": lambda n, f, g: ["Everything in Fast", f"{n} VIN checks", f"{f} filters, {g} cars in garage", "Priority alerts"],
+            "vip": lambda n, f, g: ["Everything in the pass", f"{n} VIN checks", f"{f} filters, {g} cars in garage", "Priority alerts"],
             "pro": lambda n, f, g: ["Everything in VIP", f"{n} VIN checks", "Unlimited filters and garage", "Alerts first"],
         },
         "get": lambda p: f"Get {p}",
+        "pass_name": "7-day pass", "get_pass": "Get the 7-day pass",
+        "pass_alt": "One payment, no auto-renewal",
         "recommended": "Recommended",
-        "per_month": lambda m: f"≈ €{m} / month*",
-        "promo": lambda p: f"Promo until Dec 31. Your €{p} stays while you are subscribed.",
-        "footnote": lambda m: f"* Fast renews every week: €6 × 4.3 weeks ≈ €{m} a month.",
         "tag": {"fast": ("Need a car urgently", "A week of full access while you buy right now."),
                 "vip": ("No rush, no overpaying", "Search calmly: deals come to you every day."),
                 "pro": ("For resellers and dealers", "You buy to resell: the most checks, alerts before everyone.")},
         "guide_h": "How to pay and start",
         "guide": ["Tap a plan and pay in Tribute.",
-                  "After payment, Tribute gives you access to the VIP channel.",
+                  "VIP and PRO: Tribute gives you access to the VIP channel after payment. The 7-day pass: the channel button comes in the bot.",
                   "Open the bot, tap START and set a filter. Then personal deals come to your messages."],
         "guide_go": "Open the bot",
         "fee": "Prices are without Tribute's service fee. Tribute adds it at checkout, and you see it before you confirm.",
@@ -189,7 +187,7 @@ T = {
             ("Who takes the money.", "TRBT Limited (Cyprus, HE 443898), the company behind Tribute. This name shows on your bank statement."),
             ("No card? Fine.", "Besides a card, Tribute offers other ways to pay. The set depends on your device and country, and you see the full list before you pay."),
             ("There is a service fee.", "Tribute adds its own fee on top of the plan price. You see the full sum at checkout, before you confirm."),
-            ("Cancel in one place.", "You manage and cancel the plan inside Tribute."),
+            ("Cancel in one place.", "You manage and cancel VIP and PRO inside Tribute. The 7-day pass has nothing to cancel."),
         ],
         "contacts_h": "Contacts and socials", "questions": "Questions? Write to",
         "tg_channel": "Telegram channel",
@@ -220,27 +218,26 @@ T = {
         ],
         "plans_h": "Тарифы и оплата",
         "trial_h": "Не готов платить?",
-        "trial_sub": "Бесплатно и без карты. Когда закончится, просто остановится: ничего не спишется.",
-        "trial_items": lambda v: ["Сделки в личку", "VIP-канал", f"{v} {ru_plural(v, 'проверка', 'проверки', 'проверок')} VIN на весь срок"],
+        "trial_sub": "Бесплатно и без карты. Отсчёт пойдёт с первой машины. Когда закончится, просто остановится: ничего не спишется.",
+        "trial_items": lambda v: [f"{TRIAL_CARS} сделок в день в личку", "VIP-канал", f"{v} {ru_plural(v, 'проверка', 'проверки', 'проверок')} VIN на весь срок"],
         "trial_go": "Начать бесплатно",
-        "plans_note": lambda w, m1, m2: f"Платные тарифы действуют, пока не отменишь. Проверки VIN обновляются каждый период: {w} в неделю на Fast, {m1} или {m2} в месяц на VIP и PRO.",
+        "plans_note": lambda w, m1, m2: f"VIP и PRO действуют, пока не отменишь. Пропуск заканчивается сам через 7 дней, без автопродления. Проверки VIN: {w} на пропуске, {m1} или {m2} в месяц на VIP и PRO.",
         "period": {"week": "/ 7 дней", "month": "/ мес"},
         "feat": {
             "fast": lambda n, f, g: ["Сделки в личку", "VIP-канал", f"{n} проверок VIN", f"{f} фильтров, {g} машин в гараже"],
-            "vip": lambda n, f, g: ["Всё из Fast", f"{n} проверок VIN", f"{f} фильтров, {g} машин в гараже", "Приоритетные алерты"],
+            "vip": lambda n, f, g: ["Всё из пропуска", f"{n} проверок VIN", f"{f} фильтров, {g} машин в гараже", "Приоритетные алерты"],
             "pro": lambda n, f, g: ["Всё из VIP", f"{n} проверок VIN", "Безлимит фильтров и гаража", "Алерты первым"],
         },
         "get": lambda p: f"Оформить {p}",
+        "pass_name": "Пропуск на 7 дней", "get_pass": "Взять пропуск на 7 дней",
+        "pass_alt": "Один платёж, без автопродления",
         "recommended": "Рекомендуем",
-        "per_month": lambda m: f"≈ €{m} / мес*",
-        "promo": lambda p: f"Акция до 31 декабря. Цена €{p} остаётся, пока подписка активна.",
-        "footnote": lambda m: f"* Fast продлевается каждую неделю: €6 × 4,3 недели ≈ €{m} в месяц.",
         "tag": {"fast": ("Срочно нужна машина", "Неделя полного доступа, пока ищешь прямо сейчас."),
                 "vip": ("Без спешки и без переплаты", "Ищешь спокойно, сделки сами приходят каждый день."),
                 "pro": ("Для перекупов и дилеров", "Покупаешь на перепродажу: больше всего проверок, алерты раньше всех.")},
         "guide_h": "Как оплатить и начать",
         "guide": ["Нажми на тариф и оплати в Tribute.",
-                  "После оплаты Tribute даст доступ в VIP-канал.",
+                  "VIP и PRO: Tribute даст доступ в VIP-канал после оплаты. Пропуск на 7 дней: кнопка канала придёт в боте.",
                   "Открой бота, нажми START и поставь фильтр. Тогда личные сделки пойдут в личку."],
         "guide_go": "Открыть бота",
         "fee": "Цены без сервисного сбора Tribute. Tribute добавляет его при оплате, и ты видишь его до подтверждения.",
@@ -251,7 +248,7 @@ T = {
             ("Кто получает деньги.", "TRBT Limited (Кипр, HE 443898), компания, которая стоит за Tribute. Это имя будет в выписке банка."),
             ("Нет карты? Не страшно.", "Кроме карты, у Tribute есть другие способы оплаты. Набор зависит от устройства и страны, полный список видно перед оплатой."),
             ("Есть сервисный сбор.", "Tribute добавляет свой сбор поверх цены тарифа. Полную сумму ты видишь при оплате, до подтверждения."),
-            ("Отмена в одном месте.", "Тариф управляется и отменяется внутри Tribute."),
+            ("Отмена в одном месте.", "VIP и PRO управляются и отменяются внутри Tribute. У пропуска отменять нечего."),
         ],
         "contacts_h": "Контакты и соцсети", "questions": "Вопросы? Пиши на",
         "tg_channel": "Telegram-канал",
@@ -283,27 +280,26 @@ T = {
         ],
         "plans_h": "ტარიფები და გადახდა",
         "trial_h": "ჯერ არ ხარ მზად გადასახდელად?",
-        "trial_sub": "უფასოდ და ბარათის გარეშე. როცა დასრულდება, უბრალოდ გაჩერდება: არაფერი ჩამოგეჭრება.",
-        "trial_items": lambda v: ["შეთავაზებები პირად შეტყობინებებში", "VIP-არხი", f"სულ {v} VIN-შემოწმება"],
+        "trial_sub": "უფასოდ და ბარათის გარეშე. ათვლა პირველი მანქანიდან იწყება. როცა დასრულდება, უბრალოდ გაჩერდება: არაფერი ჩამოგეჭრება.",
+        "trial_items": lambda v: [f"დღეში {TRIAL_CARS} შეთავაზება პირად შეტყობინებებში", "VIP-არხი", f"სულ {v} VIN-შემოწმება"],
         "trial_go": "დაიწყე უფასოდ",
-        "plans_note": lambda w, m1, m2: f"ფასიანი ტარიფები მოქმედებს, სანამ არ გააუქმებ. VIN-შემოწმებები ყოველ პერიოდში ახლდება: Fast-ზე კვირაში {w}, VIP-სა და PRO-ზე თვეში {m1} ან {m2}.",
+        "plans_note": lambda w, m1, m2: f"VIP და PRO მოქმედებს, სანამ არ გააუქმებ. 7-დღიანი წვდომა თავად სრულდება, ავტომატური გაგრძელების გარეშე. VIN-შემოწმებები: 7-დღიან წვდომაზე {w}, VIP-სა და PRO-ზე თვეში {m1} ან {m2}.",
         "period": {"week": "/ 7 დღე", "month": "/ თვე"},
         "feat": {
             "fast": lambda n, f, g: ["შეთავაზებები პირად შეტყობინებებში", "VIP-არხი", f"{n} VIN-შემოწმება", f"{f} ფილტრი, {g} მანქანა გარაჟში"],
-            "vip": lambda n, f, g: ["ყველაფერი Fast-დან", f"{n} VIN-შემოწმება", f"{f} ფილტრი, {g} მანქანა გარაჟში", "პრიორიტეტული შეტყობინებები"],
+            "vip": lambda n, f, g: ["ყველაფერი 7-დღიანი წვდომიდან", f"{n} VIN-შემოწმება", f"{f} ფილტრი, {g} მანქანა გარაჟში", "პრიორიტეტული შეტყობინებები"],
             "pro": lambda n, f, g: ["ყველაფერი VIP-დან", f"{n} VIN-შემოწმება", "ულიმიტო ფილტრი და გარაჟი", "შეტყობინებები პირველ რიგში"],
         },
         "get": lambda p: f"აირჩიე {p}",
+        "pass_name": "7-დღიანი წვდომა", "get_pass": "აირჩიე 7-დღიანი წვდომა",
+        "pass_alt": "ერთჯერადი გადახდა, ავტომატური გაგრძელების გარეშე",
         "recommended": "გირჩევთ",
-        "per_month": lambda m: f"≈ €{m} / თვე*",
-        "promo": lambda p: f"აქცია 31 დეკემბრამდე. ფასი €{p} შენარჩუნდება, სანამ გამოწერა აქტიურია.",
-        "footnote": lambda m: f"* Fast ყოველ კვირას გრძელდება: €6 × 4,3 კვირა ≈ €{m} თვეში.",
         "tag": {"fast": ("მანქანა სასწრაფოდ გჭირდება", "სრული წვდომის კვირა, სანამ ახლავე ეძებ."),
                 "vip": ("აჩქარებისა და ზედმეტი ხარჯის გარეშე", "მშვიდად ეძებ, შეთავაზებები ყოველდღე თავად მოდის."),
                 "pro": ("გადამყიდველებისა და დილერებისთვის", "ყიდულობ გასაყიდად: ყველაზე მეტი შემოწმება, შეტყობინებები ყველაზე ადრე.")},
         "guide_h": "როგორ გადავიხადო და დავიწყო",
         "guide": ["დააჭირე ტარიფს და გადაიხადე Tribute-ში.",
-                  "გადახდის შემდეგ Tribute VIP-არხზე წვდომას მოგცემს.",
+                  "VIP და PRO: გადახდის შემდეგ Tribute VIP-არხზე წვდომას მოგცემს. 7-დღიანი წვდომა: არხის ღილაკი ბოტში მოვა.",
                   "გახსენი ბოტი, დააჭირე START-ს და დააყენე ფილტრი. მაშინ პირადი შეთავაზებები პირად შეტყობინებებში მოვა."],
         "guide_go": "გახსენი ბოტი",
         "fee": "ფასები მოცემულია Tribute-ის მომსახურების საკომისიოს გარეშე. Tribute მას გადახდისას ამატებს და დადასტურებამდე დაინახავ.",
@@ -314,7 +310,7 @@ T = {
             ("ვინ იღებს ფულს.", "TRBT Limited (კვიპროსი, HE 443898), კომპანია, რომელიც Tribute-ს უდგას უკან. ეს სახელი ჩანს ბანკის ამონაწერში."),
             ("ბარათი არ გაქვს? არა უშავს.", "ბარათის გარდა, Tribute-ს სხვა გადახდის გზებიც აქვს. ნაკრები მოწყობილობასა და ქვეყანაზეა დამოკიდებული, სრულ სიას გადახდამდე ნახავ."),
             ("არის მომსახურების საკომისიო.", "Tribute ტარიფის ფასს თავის საკომისიოს ამატებს. სრულ თანხას გადახდისას, დადასტურებამდე ხედავ."),
-            ("გაუქმება ერთ ადგილას.", "ტარიფს Tribute-ში მართავ და იქვე აუქმებ."),
+            ("გაუქმება ერთ ადგილას.", "VIP და PRO იმართება და უქმდება Tribute-ში. 7-დღიან წვდომას გასაუქმებელი არ აქვს."),
         ],
         "contacts_h": "კონტაქტები და ქსელები", "questions": "კითხვები გაქვს? მოგვწერე:",
         "tg_channel": "Telegram-არხი",
@@ -346,27 +342,26 @@ T = {
         ],
         "plans_h": "پلن‌ها و پرداخت",
         "trial_h": "هنوز آمادهٔ پرداخت نیستی؟",
-        "trial_sub": "رایگان و بدون کارت. وقتی تمام شود، فقط متوقف می‌شود: هیچ پولی کسر نمی‌شود.",
-        "trial_items": lambda v: ["پیشنهادها در پیام‌هایت", "کانال VIP", f"در کل {v} بررسی VIN"],
+        "trial_sub": "رایگان و بدون کارت. شمارش از اولین خودرو شروع می‌شود. وقتی تمام شود، فقط متوقف می‌شود: هیچ پولی کسر نمی‌شود.",
+        "trial_items": lambda v: [f"روزی {num('fa', TRIAL_CARS)} پیشنهاد در پیام‌هایت", "کانال VIP", f"در کل {v} بررسی VIN"],
         "trial_go": "شروع رایگان",
-        "plans_note": lambda w, m1, m2: f"پلن‌های پولی تا وقتی لغوشان نکنی فعال می‌مانند. بررسی‌های VIN هر دوره تازه می‌شوند: در Fast هفته‌ای {w}، در VIP و PRO ماهی {m1} یا {m2}.",
+        "plans_note": lambda w, m1, m2: f"VIP و PRO تا وقتی لغوشان نکنی فعال می‌مانند. دسترسی ۷ روزه خودش تمام می‌شود و تمدید خودکار ندارد. بررسی‌های VIN: در دسترسی ۷ روزه {w}، در VIP و PRO ماهی {m1} یا {m2}.",
         "period": {"week": "/ ۷ روز", "month": "/ ماه"},
         "feat": {
             "fast": lambda n, f, g: ["پیشنهادها در پیام‌هایت", "کانال VIP", f"{n} بررسی VIN", f"{f} فیلتر، {g} خودرو در گاراژ"],
-            "vip": lambda n, f, g: ["همهٔ امکانات Fast", f"{n} بررسی VIN", f"{f} فیلتر، {g} خودرو در گاراژ", "هشدار با اولویت"],
+            "vip": lambda n, f, g: ["همهٔ امکانات دسترسی ۷ روزه", f"{n} بررسی VIN", f"{f} فیلتر، {g} خودرو در گاراژ", "هشدار با اولویت"],
             "pro": lambda n, f, g: ["همهٔ امکانات VIP", f"{n} بررسی VIN", "فیلتر و گاراژ نامحدود", "هشدار زودتر از همه"],
         },
         "get": lambda p: f"گرفتن {p}",
+        "pass_name": "دسترسی ۷ روزه", "get_pass": "گرفتن دسترسی ۷ روزه",
+        "pass_alt": "یک پرداخت، بدون تمدید خودکار",
         "recommended": "پیشنهاد ما",
-        "per_month": lambda m: f"≈ ⁦€{m}⁩ / ماه*",  # LRI/PDI: keep "€26" in LTR order
-        "promo": lambda p: f"تخفیف تا ۳۱ دسامبر. قیمت ⁦€{p}⁩ تا وقتی اشتراکت فعال است ثابت می‌ماند.",
-        "footnote": lambda m: f"* Fast هر هفته تمدید می‌شود: ⁦€6⁩ × ۴٫۳ هفته ≈ ⁦€{m}⁩ در ماه.",
         "tag": {"fast": ("فوری خودرو لازم داری", "یک هفته دسترسی کامل، وقتی همین حالا دنبال خرید هستی."),
                 "vip": ("بدون عجله و بدون هزینهٔ اضافه", "با خیال راحت بگرد، پیشنهادها هر روز خودشان می‌رسند."),
                 "pro": ("برای خرید و فروش حرفه‌ای", "برای فروش دوباره می‌خری: بیشترین بررسی‌ها، هشدار زودتر از همه.")},
         "guide_h": "چطور پرداخت کنم و شروع کنم",
         "guide": ["روی یک پلن بزن و در Tribute پرداخت کن.",
-                  "بعد از پرداخت، Tribute به تو دسترسی کانال VIP را می‌دهد.",
+                  "VIP و PRO: بعد از پرداخت، Tribute به تو دسترسی کانال VIP را می‌دهد. دسترسی ۷ روزه: دکمهٔ کانال در ربات می‌آید.",
                   "ربات را باز کن، START را بزن و یک فیلتر بگذار. آن‌وقت پیشنهادهای شخصی به پیام‌هایت می‌آید."],
         "guide_go": "باز کردن ربات",
         "fee": "قیمت‌ها بدون کارمزد خدمات Tribute است. Tribute آن را هنگام پرداخت اضافه می‌کند و قبل از تأیید آن را می‌بینی.",
@@ -377,7 +372,7 @@ T = {
             ("چه کسی پول را می‌گیرد.", "TRBT Limited (قبرس، HE 443898)، شرکتی که پشت Tribute است. همین نام در صورت‌حساب بانکی‌ات دیده می‌شود."),
             ("کارت نداری؟ اشکالی ندارد.", "به‌جز کارت، Tribute راه‌های دیگری هم برای پرداخت دارد. مجموعه به دستگاه و کشورت بستگی دارد و فهرست کامل را قبل از پرداخت می‌بینی."),
             ("کارمزد خدمات وجود دارد.", "Tribute کارمزد خودش را روی قیمت پلن اضافه می‌کند. مبلغ کامل را هنگام پرداخت، قبل از تأیید می‌بینی."),
-            ("لغو در یک جا.", "پلن را داخل Tribute مدیریت و لغو می‌کنی."),
+            ("لغو در یک جا.", "VIP و PRO را داخل Tribute مدیریت و لغو می‌کنی. دسترسی ۷ روزه چیزی برای لغو ندارد."),
         ],
         "contacts_h": "تماس و شبکه‌های اجتماعی", "questions": "سؤالی داری؟ بنویس به",
         "tg_channel": "کانال تلگرام",
@@ -469,23 +464,23 @@ def lot(lang: str, i: int, d: dict) -> str:
 def plans(lang: str) -> str:
     t, e = T[lang], escape
     out = []
-    for pid, name, eur, period, vin, filters, garage, old in PLANS:
+    for pid, name, eur, period, vin, filters, garage in PLANS:
+        name = name or t["pass_name"]
         feats = "".join(f"<li>{e(x)}</li>" for x in t["feat"][pid](num(lang, vin), num(lang, filters),
                                                                     num(lang, garage)))
         cls = "plan plan-hi" if pid == "vip" else "plan"
         badge = f'<span class="plan-badge">{e(t["recommended"])}</span>' if pid == "vip" else ""
-        alt = (t["per_month"](FAST_MONTH_EUR) if pid == "fast"
-               else t["promo"](eur) if old else "")
-        was = f'<s class="was">€{old}</s> ' if old else ""
+        alt = t["pass_alt"] if pid == "fast" else ""
+        get = t["get_pass"] if pid == "fast" else t["get"](name)
         tag, line = t["tag"][pid]
         out.append(f"""<article class="{cls}">
 {badge}<h3 class="cond">{name}</h3>
 <p class="plan-tag">{e(tag)}</p>
 <p class="plan-line">{e(line)}</p>
-<p class="plan-price">{was}<span class="cond" dir="ltr">€{eur}</span> <span class="per">{e(t['period'][period])}</span></p>
+<p class="plan-price"><span class="cond" dir="ltr">€{eur}</span> <span class="per">{e(t['period'][period])}</span></p>
 <p class="plan-alt" dir="auto">{e(alt)}</p>
 <ul>{feats}</ul>
-<a class="go plan-go" href="{TRIBUTE[pid]}" data-k="plan" data-p="{pid}">{e(t['get'](name))}{ARROW}</a>
+<a class="go plan-go" href="{TRIBUTE[pid]}" data-k="plan" data-p="{pid}">{e(get)}{ARROW}</a>
 </article>""")
     return "".join(out)
 
@@ -587,7 +582,7 @@ def page(lang: str, data: dict) -> str:
 <h2 id="plans-h" class="cond">{e(t["plans_h"])}</h2>
 <p class="plans-note">{e(t["plans_note"](*(num(lang, p[4]) for p in PLANS)))}</p>
 <div class="plans">{plans(lang)}</div>
-<p class="fee">{e(t["footnote"](FAST_MONTH_EUR))}<br>{e(fee)}</p>
+<p class="fee">{e(fee)}</p>
 <div class="guide">
 <h3 class="cond">{e(t["guide_h"])}</h3>
 <ol>{guide}</ol>
