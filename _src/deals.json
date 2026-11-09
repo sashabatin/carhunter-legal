@@ -1,39 +1,39 @@
 {
- "from": "2026-10-12",
- "to": "2026-10-19",
+ "from": "2026-11-02",
+ "to": "2026-11-09",
  "deals": [
   {
-   "id": "myauto-123717886",
-   "day": "2026-10-17",
-   "car": "Toyota RAV 4 2023",
+   "id": "myauto-123901874",
+   "day": "2026-11-02",
+   "car": "Tesla Model S 2017",
    "city": "Tbilisi",
-   "km": "123 000",
-   "price_usd": 14500,
-   "market_usd": 22500,
+   "km": "222 400",
+   "price_usd": 9500,
+   "market_usd": 14900,
    "off": 36,
-   "img": "/img/deals/myauto-123717886.webp"
+   "img": "/img/deals/myauto-123901874.webp"
   },
   {
-   "id": "myauto-123717904",
-   "day": "2026-10-17",
-   "car": "Toyota Sienna 2020",
+   "id": "myauto-123978810",
+   "day": "2026-11-09",
+   "car": "Porsche Macan 2018",
    "city": "Tbilisi",
-   "km": "222 000",
-   "price_usd": 16500,
-   "market_usd": 25500,
-   "off": 35,
-   "img": "/img/deals/myauto-123717904.webp"
+   "km": "156 000",
+   "price_usd": 17400,
+   "market_usd": 25900,
+   "off": 33,
+   "img": "/img/deals/myauto-123978810.webp"
   },
   {
-   "id": "myauto-123704691",
-   "day": "2026-10-16",
-   "car": "Mitsubishi Outlander Sport 2017",
-   "city": "Zugdidi",
-   "km": "22 400",
-   "price_usd": 5300,
-   "market_usd": 7900,
-   "off": 33,
-   "img": "/img/deals/myauto-123704691.webp"
+   "id": "myauto-123979266",
+   "day": "2026-11-09",
+   "car": "BMW 528 2013",
+   "city": "Tbilisi",
+   "km": "297 600",
+   "price_usd": 5700,
+   "market_usd": 8000,
+   "off": 29,
+   "img": "/img/deals/myauto-123979266.webp"
   }
  ]
 }
