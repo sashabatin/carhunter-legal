@@ -1,17 +1,17 @@
 {
- "from": "2026-11-02",
- "to": "2026-11-09",
+ "from": "2026-11-09",
+ "to": "2026-11-16",
  "deals": [
   {
-   "id": "myauto-123901874",
-   "day": "2026-11-02",
-   "car": "Tesla Model S 2017",
-   "city": "Tbilisi",
-   "km": "222 400",
-   "price_usd": 9500,
-   "market_usd": 14900,
-   "off": 36,
-   "img": "/img/deals/myauto-123901874.webp"
+   "id": "myauto-124062099",
+   "day": "2026-11-15",
+   "car": "Audi A6 2011",
+   "city": "Batumi",
+   "km": "230 000",
+   "price_usd": 6000,
+   "market_usd": 9500,
+   "off": 37,
+   "img": "/img/deals/myauto-124062099.webp"
   },
   {
    "id": "myauto-123978810",
