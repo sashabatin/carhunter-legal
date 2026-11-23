@@ -1,10 +1,21 @@
 {
- "from": "2026-11-09",
- "to": "2026-11-16",
+ "from": "2026-11-16",
+ "to": "2026-11-23",
  "deals": [
   {
+   "id": "myauto-124082343",
+   "day": "2026-11-19",
+   "car": "Toyota RAV 4 2021",
+   "city": "Tbilisi",
+   "km": "159 000",
+   "price_usd": 11900,
+   "market_usd": 20000,
+   "off": 40,
+   "img": "/img/deals/myauto-124082343.webp"
+  },
+  {
    "id": "myauto-124062099",
-   "day": "2026-11-15",
+   "day": "2026-11-16",
    "car": "Audi A6 2011",
    "city": "Batumi",
    "km": "230 000",
@@ -14,26 +25,15 @@
    "img": "/img/deals/myauto-124062099.webp"
   },
   {
-   "id": "myauto-123978810",
-   "day": "2026-11-09",
-   "car": "Porsche Macan 2018",
-   "city": "Tbilisi",
-   "km": "156 000",
-   "price_usd": 17400,
-   "market_usd": 25900,
-   "off": 33,
-   "img": "/img/deals/myauto-123978810.webp"
-  },
-  {
-   "id": "myauto-123979266",
-   "day": "2026-11-09",
-   "car": "BMW 528 2013",
-   "city": "Tbilisi",
-   "km": "297 600",
-   "price_usd": 5700,
-   "market_usd": 8000,
-   "off": 29,
-   "img": "/img/deals/myauto-123979266.webp"
+   "id": "myauto-124100742",
+   "day": "2026-11-18",
+   "car": "Toyota RAV 4 2023",
+   "city": "Kutaisi",
+   "km": "105 000",
+   "price_usd": 15500,
+   "market_usd": 22500,
+   "off": 31,
+   "img": "/img/deals/myauto-124100742.webp"
   }
  ]
 }
